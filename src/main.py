@@ -3,36 +3,71 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.spinner import Spinner
+from kivy.uix.widget import Widget
+from kivy.core.window import Window
+
 import tkinter as tk
 from tkinter import filedialog
 import os
 from PIL import Image
+from reportlab.pdfgen import canvas
+
+# Set window size (useful when testing on desktop)
+Window.size = (360, 640)
 
 class FileConverterApp(App):
     def build(self):
         self.file_path = None
 
-        layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
+        root_layout = BoxLayout(orientation='vertical', padding=20, spacing=15)
 
-        self.label = Label(text="No file selected")
+        self.label = Label(
+            text="No file selected",
+            size_hint=(1, None),
+            height=60,
+            font_size=16,
+            halign="center",
+            valign="middle"
+        )
+        self.label.bind(size=self.label.setter('text_size'))
+
         self.spinner = Spinner(
             text="Choose conversion",
-            values=("PNG to JPG", "JPG to PNG"),
+            values=("PNG to JPG", "JPG to PNG", "TXT to PDF"),
             size_hint=(1, None),
-            height=44
+            height=50,
+            background_color=(0.2, 0.5, 0.8, 1),
+            color=(1, 1, 1, 1),
+            font_size=16
         )
-        pick_btn = Button(text="Pick a File", size_hint=(1, None), height=44)
-        convert_btn = Button(text="Convert", size_hint=(1, None), height=44)
+
+        pick_btn = Button(
+            text="Pick a File",
+            size_hint=(1, None),
+            height=50,
+            background_color=(0.2, 0.6, 0.4, 1),
+            font_size=16
+        )
+
+        convert_btn = Button(
+            text="Convert",
+            size_hint=(1, None),
+            height=50,
+            background_color=(0.9, 0.4, 0.3, 1),
+            font_size=16
+        )
 
         pick_btn.bind(on_press=self.pick_file)
         convert_btn.bind(on_press=self.convert_file)
 
-        layout.add_widget(self.label)
-        layout.add_widget(self.spinner)
-        layout.add_widget(pick_btn)
-        layout.add_widget(convert_btn)
+        root_layout.add_widget(Widget(size_hint_y=None, height=40))  # Top spacer
+        root_layout.add_widget(self.label)
+        root_layout.add_widget(self.spinner)
+        root_layout.add_widget(pick_btn)
+        root_layout.add_widget(convert_btn)
+        root_layout.add_widget(Widget(size_hint_y=None, height=40))  # Bottom spacer
 
-        return layout
+        return root_layout
 
     def pick_file(self, instance):
         root = tk.Tk()
@@ -51,6 +86,7 @@ class FileConverterApp(App):
             return
 
         conversion = self.spinner.text
+
         if conversion == "PNG to JPG" and self.file_path.lower().endswith(".png"):
             img = Image.open(self.file_path).convert("RGB")
             new_path = self.file_path.replace(".png", "_converted.jpg")
@@ -61,6 +97,18 @@ class FileConverterApp(App):
             img = Image.open(self.file_path)
             new_path = self.file_path.replace(".jpg", "_converted.png")
             img.save(new_path, "PNG")
+            self.label.text = f"Saved: {os.path.basename(new_path)}"
+
+        elif conversion == "TXT to PDF" and self.file_path.lower().endswith(".txt"):
+            new_path = self.file_path.replace(".txt", "_converted.pdf")
+            c = canvas.Canvas(new_path)
+            with open(self.file_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+                y = 800
+                for line in lines:
+                    c.drawString(72, y, line.strip())
+                    y -= 15
+            c.save()
             self.label.text = f"Saved: {os.path.basename(new_path)}"
 
         else:
