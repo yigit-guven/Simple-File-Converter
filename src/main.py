@@ -16,6 +16,8 @@ from kivy.metrics import dp
 
 import os
 from PIL import Image
+from pdf2image import convert_from_path
+import csv
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph
@@ -65,12 +67,22 @@ class HomeScreen(Screen):
     output_message = StringProperty("No file selected")
     conversion_options = [
         "DOCX to TXT",
+        "DOCX to PDF",
         "JPG to PDF",
         "JPG to PNG",
+        "JPG to WEBP",
         "PNG to JPG",
         "PNG to PDF",
+        "PNG to WEBP",
+        "PDF to JPG",
+        "PDF to PNG",
         "TXT to PDF",
-        "WEBP to PDF"
+        "TXT to DOCX",
+        "WEBP to PDF",
+        "WEBP to JPG",
+        "WEBP to PNG",
+        "CSV to PDF",
+        "CSV to TXT"
     ]
     
     def __init__(self, **kwargs):
@@ -248,6 +260,97 @@ class HomeScreen(Screen):
                     img.save(new_path, "PDF", resolution=100.0)
                     self.file_label.text = f"Saved: {os.path.basename(new_path)}"
                 
+                # New conversions
+                elif conversion == "PDF to JPG" and ext.lower() == ".pdf":
+                    new_path = os.path.join(save_dir, f"{name}_converted.jpg")
+                    images = convert_from_path(self.file_path)
+                    for i, image in enumerate(images):
+                        if i > 0:  # For multi-page PDFs, add page number
+                            new_path = os.path.join(save_dir, f"{name}_converted_{i+1}.jpg")
+                        image.save(new_path, "JPEG", quality=95)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "PDF to PNG" and ext.lower() == ".pdf":
+                    new_path = os.path.join(save_dir, f"{name}_converted.png")
+                    images = convert_from_path(self.file_path)
+                    for i, image in enumerate(images):
+                        if i > 0:  # For multi-page PDFs, add page number
+                            new_path = os.path.join(save_dir, f"{name}_converted_{i+1}.png")
+                        image.save(new_path, "PNG")
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "DOCX to PDF" and ext.lower() == ".docx":
+                    new_path = os.path.join(save_dir, f"{name}_converted.pdf")
+                    doc = docx.Document(self.file_path)
+                    pdf = SimpleDocTemplate(new_path, pagesize=letter)
+                    styles = getSampleStyleSheet()
+                    story = []
+                    
+                    for para in doc.paragraphs:
+                        p = Paragraph(para.text, styles["Normal"])
+                        story.append(p)
+                    
+                    pdf.build(story)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "TXT to DOCX" and ext.lower() == ".txt":
+                    new_path = os.path.join(save_dir, f"{name}_converted.docx")
+                    doc = docx.Document()
+                    with open(self.file_path, "r", encoding="utf-8") as f:
+                        for line in f:
+                            doc.add_paragraph(line)
+                    doc.save(new_path)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "JPG to WEBP" and ext.lower() in (".jpg", ".jpeg"):
+                    new_path = os.path.join(save_dir, f"{name}_converted.webp")
+                    img = Image.open(self.file_path)
+                    img.save(new_path, "WEBP", quality=80)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "PNG to WEBP" and ext.lower() == ".png":
+                    new_path = os.path.join(save_dir, f"{name}_converted.webp")
+                    img = Image.open(self.file_path)
+                    img.save(new_path, "WEBP", quality=80)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "WEBP to JPG" and ext.lower() == ".webp":
+                    new_path = os.path.join(save_dir, f"{name}_converted.jpg")
+                    img = Image.open(self.file_path).convert("RGB")
+                    img.save(new_path, "JPEG", quality=95)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "WEBP to PNG" and ext.lower() == ".webp":
+                    new_path = os.path.join(save_dir, f"{name}_converted.png")
+                    img = Image.open(self.file_path)
+                    img.save(new_path, "PNG")
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "CSV to PDF" and ext.lower() == ".csv":
+                    new_path = os.path.join(save_dir, f"{name}_converted.pdf")
+                    pdf = SimpleDocTemplate(new_path, pagesize=letter)
+                    styles = getSampleStyleSheet()
+                    story = []
+                    
+                    with open(self.file_path, "r", encoding="utf-8") as f:
+                        reader = csv.reader(f)
+                        for row in reader:
+                            text = ", ".join(row)
+                            p = Paragraph(text, styles["Normal"])
+                            story.append(p)
+                    
+                    pdf.build(story)
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
+                elif conversion == "CSV to TXT" and ext.lower() == ".csv":
+                    new_path = os.path.join(save_dir, f"{name}_converted.txt")
+                    with open(self.file_path, "r", encoding="utf-8") as f_in, \
+                         open(new_path, "w", encoding="utf-8") as f_out:
+                        reader = csv.reader(f_in)
+                        for row in reader:
+                            f_out.write("\t".join(row) + "\n")
+                    self.file_label.text = f"Saved: {os.path.basename(new_path)}"
+                
                 else:
                     self.file_label.text = "Unsupported conversion or file type"
                     popup.dismiss()
@@ -325,25 +428,75 @@ class SettingsScreen(Screen):
         output_box.add_widget(choose_dir_btn)
         output_box.add_widget(reset_dir_btn)
         
-        # Credits
-        credits = Label(
-            text="Simple File Converter\nVersion 1.0\n\nDeveloped by Yigit Guven\n\n" +
-                 "Licensed under CC BY-SA 4.0\n" +
-                 "Source code: github.com/yigit-guven/Simple-File-Converter",
-            font_size='14sp',
-            halign="center",
-            valign="bottom"
+        # Credits - Improved version
+        credits_box = BoxLayout(orientation='vertical', size_hint=(1, None), height=dp(200))
+        
+        # Main title
+        credits_title = Label(
+            text="Simple File Converter",
+            font_size='20sp',
+            bold=True,
+            size_hint=(1, None),
+            height=dp(40)
         )
         
-        # Back button
+        # Version info
+        version_info = Label(
+            text="Version 1.1",
+            font_size='16sp',
+            size_hint=(1, None),
+            height=dp(30)
+        )
+        
+        # Developer info
+        developer_info = Label(
+            text="Developed by Yigit Guven",
+            font_size='16sp',
+            size_hint=(1, None),
+            height=dp(30)
+        )
+        
+        # License info
+        license_info = Label(
+            text="Licensed under CC BY-SA 4.0",
+            font_size='14sp',
+            size_hint=(1, None),
+            height=dp(25)
+        )
+        
+        # GitHub link
+        github_link = Button(
+            text="GitHub: github.com/yigit-guven/Simple-File-Converter",
+            font_size='12sp',
+            size_hint=(1, None),
+            height=dp(30),
+            background_color=(0, 0, 0, 0),  # Transparent background
+            color=(0.2, 0.6, 0.86, 1),  # Blue text
+            bold=True
+        )
+        
+        def open_github(instance):
+            import webbrowser
+            webbrowser.open("https://github.com/yigit-guven/Simple-File-Converter")
+        
+        github_link.bind(on_press=open_github)
+        
+        # Back button - This was missing and caused the error
         back_btn = StyledButton(text="Back to Home")
         back_btn.bind(on_press=lambda x: setattr(self.manager, 'current', 'home'))
         
-        # Add widgets
+        # Add all credit widgets
+        credits_box.add_widget(credits_title)
+        credits_box.add_widget(version_info)
+        credits_box.add_widget(developer_info)
+        credits_box.add_widget(license_info)
+        credits_box.add_widget(github_link)
+        
+        # Add widgets to main layout
         self.layout.add_widget(output_box)
         self.layout.add_widget(Widget(size_hint_y=1))  # Spacer
-        self.layout.add_widget(credits)
-        self.layout.add_widget(back_btn)
+        self.layout.add_widget(credits_box)
+        self.layout.add_widget(back_btn)  # Now properly defined
         
         self.add_widget(self.layout)
     
@@ -425,7 +578,7 @@ class SimpleFileConverterApp(App):
             button_text = [1, 1, 1, 1]        # White button text
         else:
             bg_color = [0.1, 0.1, 0.1, 1]     # Dark background
-            text_color = [0.9, 0.9, 0.9, 1]   # Light text
+            text_color = [0.7, 0.7, 0.7, 1]   # Light text
             button_color = [0.2, 0.5, 0.8, 1]  # Blue buttons
             button_text = [1, 1, 1, 1]        # White button text
         
