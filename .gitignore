@@ -60,3 +60,4 @@ var/
 
 # Briefcase log files
 logs/
+buildozer.spec
