@@ -1,8 +1,6 @@
 # Simple File Converter
 
-<img src="https://img.shields.io/badge/Platform-Android-green" alt="Android">  
-<img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-blue" alt="License">  
-<img src="https://img.shields.io/badge/Status-Stable-brightgreen" alt="Status">
+<img src="https://img.shields.io/badge/Platform-Android-green" alt="Android"> <img src="https://img.shields.io/badge/License-CC%20BY--SA%204.0-blue" alt="License"> <img src="https://img.shields.io/badge/Status-Stable-brightgreen" alt="Status">
 
 **Open-source Android app** for converting files between formats **100% offline** – no ads, no tracking.
 
