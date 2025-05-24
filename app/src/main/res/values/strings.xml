@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Simple File Converter</string>
+
+    <!-- Conversion Options -->
+    <string-array name="conversion_options">
+        <item>Select conversion type</item>
+        <item>JPG to PNG</item>
+        <item>PNG to JPG</item>
+        <item>JPG to WEBP</item>
+        <item>PNG to WEBP</item>
+        <item>WEBP to JPG</item>
+        <item>WEBP to PNG</item>
+        <item>CSV to TXT</item>
+    </string-array>
+</resources>
