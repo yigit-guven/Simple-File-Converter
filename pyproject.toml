@@ -1,0 +1,39 @@
+[tool.briefcase]
+project_name = "Simple File Converter"
+bundle = "com.yigitguven.simplefileconverter"
+version = "1.1.0"
+url = "https://yigit-guven.github.io/Simple-File-Converter/"
+license.file = "LICENSE"
+author = "Yiğit Güven"
+author_email = "anchorgamingstudios@gmail.com"
+
+[tool.briefcase.app.simplefileconverter]
+formal_name = "Simple File Converter"
+description = "Local file conversion with no ads or data collection"
+long_description = """
+Convert files between documents, images and text formats offline.
+No internet required, no ads, no data collection.
+"""
+sources = [
+    "src/simplefileconverter",
+]
+requires = [
+    "kivy>=2.0.0",
+    "pillow>=10.0.0",
+    "pdf2image>=1.16.3",
+    "reportlab>=4.0.0",
+    "python-docx>=0.8.11"
+]
+
+# Android-specific configuration
+[tool.briefcase.app.simplefileconverter.android]
+requires = [
+    "android",
+    "pyjnius"
+]
+permissions = [
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.WRITE_EXTERNAL_STORAGE"
+]
+orientation = "portrait"
+api_level = 33
