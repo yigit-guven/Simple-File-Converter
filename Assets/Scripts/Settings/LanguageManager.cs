@@ -11,7 +11,6 @@ public class LanguageManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
 
             int savedLang = PlayerPrefs.GetInt("language", 0);
             CurrentLanguage = (LanguageCode)savedLang;
