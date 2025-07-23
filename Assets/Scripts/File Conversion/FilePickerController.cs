@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.IO;
+#if UNITY_ANDROID || UNITY_IOS
+using NativeFilePickerNamespace;
+#endif
 
 public class FilePickerController : MonoBehaviour
 {
@@ -17,43 +20,55 @@ public class FilePickerController : MonoBehaviour
 
     public void OpenFilePicker()
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
-        NativeFilePicker.Permission permission = NativeFilePicker.CheckPermission();
-        if (permission != NativeFilePicker.Permission.Granted)
+#if UNITY_ANDROID || UNITY_IOS
+        // Newer version of NativeFilePicker doesn't require permission checks
+        try 
         {
-            permission = NativeFilePicker.RequestPermission();
-            if (permission != NativeFilePicker.Permission.Granted)
+            NativeFilePicker.PickFile((path) =>
             {
-                Debug.LogWarning("Permission denied.");
-                SetNotSelectedText();
-                return;
-            }
+                if (path == null)
+                {
+                    SetNotSelectedText();
+                    conversionSelector.gameObject.SetActive(false);
+                }
+                else
+                {
+                    currentFilePath = path;
+                    string fileName = Path.GetFileName(path);
+                    fileNameText.text = fileName;
+                    conversionSelector.ShowConversionOptions(path);
+                }
+            }, allowedFileTypes);
         }
-#endif
-
-        if (NativeFilePicker.IsFilePickerBusy())
-            return;
-
-        NativeFilePicker.PickFile((path) =>
+        catch (System.Exception e)
         {
-            if (path == null)
-            {
-                SetNotSelectedText();
-                conversionSelector.gameObject.SetActive(false);
-            }
-            else
-            {
-                currentFilePath = path;
-                string fileName = Path.GetFileName(path);
-                fileNameText.text = fileName;
-                conversionSelector.ShowConversionOptions(path);
-            }
-        }, allowedFileTypes);
+            Debug.LogError("File picker error: " + e.Message);
+            SetNotSelectedText();
+        }
+#elif UNITY_EDITOR
+        // Editor fallback
+        string path = UnityEditor.EditorUtility.OpenFilePanel("Select File", "", string.Join(",", allowedFileTypes));
+        if (!string.IsNullOrEmpty(path))
+        {
+            currentFilePath = path;
+            string fileName = Path.GetFileName(path);
+            fileNameText.text = fileName;
+            conversionSelector.ShowConversionOptions(path);
+        }
+        else
+        {
+            SetNotSelectedText();
+        }
+#else
+        // Fallback for other platforms
+        Debug.LogWarning("File picking not supported on this platform");
+        SetNotSelectedText();
+#endif
     }
 
     public string GetSelectedFilePath()
     {
-        return string.IsNullOrEmpty(currentFilePath) ? null : currentFilePath;
+        return currentFilePath;
     }
 
     private void SetNotSelectedText()

@@ -11,7 +11,7 @@ public class OutputPathDisplay : MonoBehaviour
         { LanguageCode.English, "Same as input file location" },
         { LanguageCode.Spanish, "Misma ubicación que el archivo de entrada" },
         { LanguageCode.Deutch, "Gleicher Speicherort wie Eingabedatei" },
-        { LanguageCode.French, "Même emplacement que le fichier d’entrée" },
+        { LanguageCode.French, "Même emplacement que le fichier d'entrée" },
         { LanguageCode.Portuguese, "Mesmo local do arquivo de entrada" },
         { LanguageCode.Japanese, "入力ファイルと同じ場所" },
         { LanguageCode.Italian, "Stessa posizione del file di input" },
@@ -24,32 +24,23 @@ public class OutputPathDisplay : MonoBehaviour
         UpdateOutputPathText();
     }
 
-
     public void UpdateOutputPathText()
     {
         if (outputPathText == null)
             return;
 
-        string displayPath;
-
         LanguageCode lang = LanguageCode.English;
-
         if (LanguageManager.Instance != null)
+        {
             lang = LanguageManager.Instance.CurrentLanguage;
-
-        if (OutputPathManager.useSameAsInput || string.IsNullOrEmpty(OutputPathManager.outputPath))
-        {
-            if (!sameLocationTranslations.TryGetValue(lang, out displayPath))
-            {
-                displayPath = sameLocationTranslations[LanguageCode.English];
-            }
         }
-        else
+
+        // Since we always use same as input now, just show the translation
+        if (!sameLocationTranslations.TryGetValue(lang, out string displayPath))
         {
-            displayPath = OutputPathManager.outputPath;
+            displayPath = sameLocationTranslations[LanguageCode.English];
         }
 
         outputPathText.text = displayPath;
     }
-
 }
