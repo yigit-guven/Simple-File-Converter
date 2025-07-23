@@ -1000,6 +1000,99 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   themeIndex: 4
+--- !u!1 &255027215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255027217}
+  - component: {fileID: 255027216}
+  m_Layer: 0
+  m_Name: ThemeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &255027216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255027215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665e521b219be5e44a1c48fd0d4ca019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themes:
+  - name: white
+    backgroundColor: {r: 0.83921576, g: 0.83921576, b: 0.83921576, a: 1}
+    buttonColor: {r: 1, g: 1, b: 1, a: 1}
+    textColor: {r: 0, g: 0, b: 0, a: 1}
+    accentColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.21960784}
+    otherDarkColor: {r: 0, g: 0, b: 0, a: 1}
+    otherLightColor: {r: 0.2627451, g: 0.52156866, b: 0.8117648, a: 1}
+    panelColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.39215687}
+  - name: black
+    backgroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
+    buttonColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    textColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+    accentColor: {r: 0.7725491, g: 0.7725491, b: 0.7725491, a: 0.23921569}
+    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
+    otherLightColor: {r: 0.2627451, g: 0.52156866, b: 0.8117648, a: 1}
+    panelColor: {r: 0.990566, g: 0.9672036, b: 0.9672036, a: 0.3529412}
+  - name: blue
+    backgroundColor: {r: 0.19001423, g: 0.19001423, b: 0.6603774, a: 1}
+    buttonColor: {r: 0.058823533, g: 0.058823533, b: 0.4901961, a: 1}
+    textColor: {r: 0.7573869, g: 0.8337653, b: 0.8679245, a: 1}
+    accentColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0.28235295}
+    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
+    otherLightColor: {r: 0.3066038, g: 1, b: 0.98503834, a: 1}
+    panelColor: {r: 0.88309896, g: 0.98470825, b: 0.990566, a: 0.3529412}
+  - name: purple
+    backgroundColor: {r: 0.58011836, g: 0.11614456, b: 0.8490566, a: 1}
+    buttonColor: {r: 0.6885599, g: 0.3009078, b: 0.9245283, a: 1}
+    textColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+    accentColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.3254902}
+    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
+    otherLightColor: {r: 0.30588236, g: 1, b: 0.9843138, a: 1}
+    panelColor: {r: 1, g: 0.8632076, b: 0.9684037, a: 0.3529412}
+  - name: red
+    backgroundColor: {r: 0.6792453, g: 0.06728373, b: 0.06728373, a: 1}
+    buttonColor: {r: 0.2735849, g: 0.034843363, b: 0.034843363, a: 1}
+    textColor: {r: 0.9716981, g: 0.9671146, b: 0.9671146, a: 1}
+    accentColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.34117648}
+    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
+    otherLightColor: {r: 0.20784315, g: 0.5058824, b: 0.8117648, a: 1}
+    panelColor: {r: 1, g: 0.7028302, b: 0.7028302, a: 0.36078432}
+  - name: green
+    backgroundColor: {r: 0, g: 0.18431373, b: 0, a: 1}
+    buttonColor: {r: 0.2627451, g: 0.42745098, b: 0.02745098, a: 1}
+    textColor: {r: 0.8619014, g: 0.9716981, b: 0.79294235, a: 1}
+    accentColor: {r: 0.8490566, g: 0.82102174, b: 0.82102174, a: 0.2784314}
+    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
+    otherLightColor: {r: 0.30588236, g: 1, b: 0.9843138, a: 1}
+    panelColor: {r: 0.21698111, g: 0.13909046, b: 0, a: 1}
+--- !u!4 &255027217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255027215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 535.03516, y: 971.13135, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432967133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,99 +3373,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   themeIndex: 1
---- !u!1 &1167745427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1167745429}
-  - component: {fileID: 1167745428}
-  m_Layer: 0
-  m_Name: ThemeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1167745428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167745427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665e521b219be5e44a1c48fd0d4ca019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  themes:
-  - name: white
-    backgroundColor: {r: 0.83921576, g: 0.83921576, b: 0.83921576, a: 1}
-    buttonColor: {r: 1, g: 1, b: 1, a: 1}
-    textColor: {r: 0, g: 0, b: 0, a: 1}
-    accentColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.21960784}
-    otherDarkColor: {r: 0, g: 0, b: 0, a: 1}
-    otherLightColor: {r: 0.2627451, g: 0.52156866, b: 0.8117648, a: 1}
-    panelColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.39215687}
-  - name: black
-    backgroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
-    buttonColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
-    textColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
-    accentColor: {r: 0.7725491, g: 0.7725491, b: 0.7725491, a: 0.23921569}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.2627451, g: 0.52156866, b: 0.8117648, a: 1}
-    panelColor: {r: 0.990566, g: 0.9672036, b: 0.9672036, a: 0.3529412}
-  - name: blue
-    backgroundColor: {r: 0.19001423, g: 0.19001423, b: 0.6603774, a: 1}
-    buttonColor: {r: 0.058823533, g: 0.058823533, b: 0.4901961, a: 1}
-    textColor: {r: 0.7573869, g: 0.8337653, b: 0.8679245, a: 1}
-    accentColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0.28235295}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.3066038, g: 1, b: 0.98503834, a: 1}
-    panelColor: {r: 0.88309896, g: 0.98470825, b: 0.990566, a: 0.3529412}
-  - name: purple
-    backgroundColor: {r: 0.58011836, g: 0.11614456, b: 0.8490566, a: 1}
-    buttonColor: {r: 0.6885599, g: 0.3009078, b: 0.9245283, a: 1}
-    textColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
-    accentColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.3254902}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.30588236, g: 1, b: 0.9843138, a: 1}
-    panelColor: {r: 1, g: 0.8632076, b: 0.9684037, a: 0.3529412}
-  - name: red
-    backgroundColor: {r: 0.6792453, g: 0.06728373, b: 0.06728373, a: 1}
-    buttonColor: {r: 0.2735849, g: 0.034843363, b: 0.034843363, a: 1}
-    textColor: {r: 0.9716981, g: 0.9671146, b: 0.9671146, a: 1}
-    accentColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.34117648}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.20784315, g: 0.5058824, b: 0.8117648, a: 1}
-    panelColor: {r: 1, g: 0.7028302, b: 0.7028302, a: 0.36078432}
-  - name: green
-    backgroundColor: {r: 0, g: 0.18431373, b: 0, a: 1}
-    buttonColor: {r: 0.2627451, g: 0.42745098, b: 0.02745098, a: 1}
-    textColor: {r: 0.8619014, g: 0.9716981, b: 0.79294235, a: 1}
-    accentColor: {r: 0.8490566, g: 0.82102174, b: 0.82102174, a: 0.2784314}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.30588236, g: 1, b: 0.9843138, a: 1}
-    panelColor: {r: 0.21698111, g: 0.13909046, b: 0, a: 1}
---- !u!4 &1167745429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167745427}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 535.03516, y: 971.13135, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232171006
 GameObject:
   m_ObjectHideFlags: 0
@@ -5890,4 +5890,4 @@ SceneRoots:
   - {fileID: 989439988}
   - {fileID: 1832276181}
   - {fileID: 1450562240}
-  - {fileID: 1167745429}
+  - {fileID: 255027217}

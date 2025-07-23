@@ -51,9 +51,15 @@ public class OutputPathManager : MonoBehaviour
 
     public static string GetFinalOutputPath(string inputFilePath)
     {
-        if (useSameAsInput && !string.IsNullOrEmpty(inputFilePath))
+        // Return input file directory if:
+        // - user wants same as input, OR
+        // - outputPath is empty or null
+        if (useSameAsInput || string.IsNullOrEmpty(outputPath))
         {
-            return Path.GetDirectoryName(inputFilePath);
+            if (!string.IsNullOrEmpty(inputFilePath))
+                return Path.GetDirectoryName(inputFilePath);
+
+            return ""; // no input path either, no valid output
         }
         return outputPath;
     }
