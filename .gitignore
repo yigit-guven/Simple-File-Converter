@@ -55,6 +55,8 @@ crashlytics-build.properties
 **/Assets/AddressableAssetsData/*/*.bin*
 **/assets/addressableassetsdata/*/*.bin*
 **/Assets/StreamingAssets/aa.meta
+/Assets/Resources/
+/Assets/Plugins/
 **/assets/streamingassets/*/aa/*
 .DS_Store*
 Thumbs.db
