@@ -635,23 +635,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translations:
   - language: 0
-    text: Select File
+    text: Choose Conversion Type
   - language: 1
-    text: Seleccionar archivo
+    text: "Elegir tipo de conversi\xF3n"
   - language: 2
-    text: "Datei ausw\xE4hlen"
+    text: "Konvertierungstyp ausw\xE4hlen"
   - language: 3
-    text: "S\xE9lectionner un fichier"
+    text: Choisir le type de conversion
   - language: 4
-    text: Selecionar arquivo
+    text: "Escolher o tipo de convers\xE3o"
   - language: 5
-    text: "\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E"
+    text: "\u5909\u63DB\u30BF\u30A4\u30D7\u3092\u9078\u629E"
   - language: 6
-    text: Seleziona file
+    text: Scegli il tipo di conversione
   - language: 7
-    text: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
+    text: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0438\u043F \u043A\u043E\u043D\u0432\u0435\u0440\u0442\u0430\u0446\u0438\u0438"
   - language: 8
-    text: "Dosya Se\xE7"
+    text: "D\xF6n\xFC\u015F\xFCm t\xFCr\xFCn\xFC se\xE7"
 --- !u!114 &482724314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,23 +1138,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translations:
   - language: 0
-    text: Select File
+    text: Start Conversion
   - language: 1
-    text: Seleccionar archivo
+    text: "Iniciar conversi\xF3n"
   - language: 2
-    text: "Datei ausw\xE4hlen"
+    text: Konvertierung starten
   - language: 3
-    text: "S\xE9lectionner un fichier"
+    text: Lancer la conversion
   - language: 4
-    text: Selecionar arquivo
+    text: "Iniciar convers\xE3o"
   - language: 5
-    text: "\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E"
+    text: "\u5909\u63DB\u3092\u958B\u59CB"
   - language: 6
-    text: Seleziona file
+    text: Avvia conversione
   - language: 7
-    text: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
+    text: "\u041D\u0430\u0447\u0430\u0442\u044C \u043A\u043E\u043D\u0432\u0435\u0440\u0442\u0430\u0446\u0438\u044E"
   - language: 8
-    text: "Dosya Se\xE7"
+    text: "D\xF6n\xFC\u015Ft\xFCrmeyi ba\u015Flat"
 --- !u!114 &872365003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,7 +1346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.30488586, y: -0.002506256}
+  m_AnchoredPosition: {x: -0.3048706, y: -0.002506256}
   m_SizeDelta: {x: 0.60989, y: -0.0049992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889829437
@@ -1817,7 +1817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015761523, y: 0.06639327}
   m_AnchorMax: {x: 0.07923848, y: 0.9346758}
-  m_AnchoredPosition: {x: 0.1000061, y: 0}
+  m_AnchoredPosition: {x: 0.10003662, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089654910
@@ -2261,7 +2261,6 @@ GameObject:
   - component: {fileID: 1396224018}
   - component: {fileID: 1396224022}
   - component: {fileID: 1396224021}
-  - component: {fileID: 1396224020}
   - component: {fileID: 1396224019}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -2303,37 +2302,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   role: 2
---- !u!114 &1396224020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396224017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f7b1c8efb0780459820a7dc9052f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translations:
-  - language: 0
-    text: Select File
-  - language: 1
-    text: Seleccionar archivo
-  - language: 2
-    text: "Datei ausw\xE4hlen"
-  - language: 3
-    text: "S\xE9lectionner un fichier"
-  - language: 4
-    text: Selecionar arquivo
-  - language: 5
-    text: "\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E"
-  - language: 6
-    text: Seleziona file
-  - language: 7
-    text: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
-  - language: 8
-    text: "Dosya Se\xE7"
 --- !u!114 &1396224021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3465,7 +3433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.047500003, y: 0.45237502}
   m_AnchorMax: {x: 0.95250005, y: 0.494375}
-  m_AnchoredPosition: {x: -0.05949402, y: 0.12848663}
+  m_AnchoredPosition: {x: -0.059509277, y: 0.12848663}
   m_SizeDelta: {x: 0.119050026, y: 0.25689697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039457828
