@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746652841}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FilePickerController, Assembly-CSharp
         m_MethodName: OpenFilePicker
         m_Mode: 1
@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 393267714}
   - component: {fileID: 393267713}
   - component: {fileID: 393267716}
+  - component: {fileID: 393267717}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -568,6 +569,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Settings
+--- !u!114 &393267717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393267711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &482724310
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
+  role: 1
 --- !u!114 &482724313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +854,7 @@ GameObject:
   - component: {fileID: 661478478}
   - component: {fileID: 661478480}
   - component: {fileID: 661478479}
+  - component: {fileID: 661478481}
   m_Layer: 5
   m_Name: File Image
   m_TagString: Untagged
@@ -903,6 +919,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661478477}
   m_CullTransparentMesh: 1
+--- !u!114 &661478481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661478477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &820334461
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,53 +964,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themes:
   - name: white
-    backgroundColor: {r: 0.83921576, g: 0.83921576, b: 0.83921576, a: 1}
-    buttonColor: {r: 1, g: 1, b: 1, a: 1}
-    textColor: {r: 0, g: 0, b: 0, a: 1}
-    accentColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.21960784}
-    otherDarkColor: {r: 0, g: 0, b: 0, a: 1}
-    otherLightColor: {r: 0.2627451, g: 0.52156866, b: 0.8117648, a: 1}
-    panelColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.39215687}
+    backgroundColor: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+    buttonColor: {r: 0, g: 0, b: 0, a: 1}
+    textColor: {r: 1, g: 1, b: 1, a: 1}
+    accentColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.33333334}
   - name: black
-    backgroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
-    buttonColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+    backgroundColor: {r: 0, g: 0, b: 0, a: 1}
+    buttonColor: {r: 1, g: 1, b: 1, a: 1}
     textColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
-    accentColor: {r: 0.7725491, g: 0.7725491, b: 0.7725491, a: 0.23921569}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.2627451, g: 0.52156866, b: 0.8117648, a: 1}
-    panelColor: {r: 0.990566, g: 0.9672036, b: 0.9672036, a: 0.3529412}
+    accentColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.39215687}
   - name: blue
-    backgroundColor: {r: 0.19001423, g: 0.19001423, b: 0.6603774, a: 1}
-    buttonColor: {r: 0.058823533, g: 0.058823533, b: 0.4901961, a: 1}
-    textColor: {r: 0.7573869, g: 0.8337653, b: 0.8679245, a: 1}
+    backgroundColor: {r: 0.088510156, g: 0.088510156, b: 0.4811321, a: 1}
+    buttonColor: {r: 0.58592916, g: 0.8159336, b: 0.9339623, a: 1}
+    textColor: {r: 0.34282663, g: 0.41227835, b: 0.6792453, a: 1}
     accentColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0.28235295}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.3066038, g: 1, b: 0.98503834, a: 1}
-    panelColor: {r: 0.88309896, g: 0.98470825, b: 0.990566, a: 0.3529412}
   - name: purple
     backgroundColor: {r: 0.58011836, g: 0.11614456, b: 0.8490566, a: 1}
-    buttonColor: {r: 0.6885599, g: 0.3009078, b: 0.9245283, a: 1}
-    textColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+    buttonColor: {r: 0.9023154, g: 0.8033998, b: 0.9622642, a: 1}
+    textColor: {r: 0.8867924, g: 0.52287287, b: 0.8240883, a: 1}
     accentColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0.3254902}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.30588236, g: 1, b: 0.9843138, a: 1}
-    panelColor: {r: 1, g: 0.8632076, b: 0.9684037, a: 0.3529412}
   - name: red
-    backgroundColor: {r: 0.6792453, g: 0.06728373, b: 0.06728373, a: 1}
-    buttonColor: {r: 0.2735849, g: 0.034843363, b: 0.034843363, a: 1}
-    textColor: {r: 0.9716981, g: 0.9671146, b: 0.9671146, a: 1}
-    accentColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.34117648}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.20784315, g: 0.5058824, b: 0.8117648, a: 1}
-    panelColor: {r: 1, g: 0.7028302, b: 0.7028302, a: 0.36078432}
+    backgroundColor: {r: 0.6603774, g: 0.13269667, b: 0.11525454, a: 1}
+    buttonColor: {r: 0.9716981, g: 0.85676837, b: 0.81127626, a: 1}
+    textColor: {r: 0.41509432, g: 0.14684941, b: 0.14684941, a: 1}
+    accentColor: {r: 0.9622642, g: 0.78524387, b: 0.78524387, a: 0.34117648}
   - name: green
     backgroundColor: {r: 0, g: 0.18431373, b: 0, a: 1}
-    buttonColor: {r: 0.2627451, g: 0.42745098, b: 0.02745098, a: 1}
-    textColor: {r: 0.8619014, g: 0.9716981, b: 0.79294235, a: 1}
+    buttonColor: {r: 0.8450752, g: 0.9339623, b: 0.71809363, a: 1}
+    textColor: {r: 0.2627451, g: 0.427451, b: 0.027450982, a: 1}
     accentColor: {r: 0.8490566, g: 0.82102174, b: 0.82102174, a: 0.2784314}
-    otherDarkColor: {r: 1, g: 1, b: 1, a: 1}
-    otherLightColor: {r: 0.30588236, g: 1, b: 0.9843138, a: 1}
-    panelColor: {r: 0.21698111, g: 0.13909046, b: 0, a: 1}
 --- !u!4 &820334463
 Transform:
   m_ObjectHideFlags: 0
@@ -1007,6 +1019,7 @@ GameObject:
   - component: {fileID: 835169676}
   - component: {fileID: 835169678}
   - component: {fileID: 835169677}
+  - component: {fileID: 835169679}
   m_Layer: 5
   m_Name: File Image
   m_TagString: Untagged
@@ -1071,6 +1084,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835169675}
   m_CullTransparentMesh: 1
+--- !u!114 &835169679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835169675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &872364999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
+  role: 1
 --- !u!114 &872365002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,64 +1281,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872364999}
   m_CullTransparentMesh: 1
---- !u!1 &886331479
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 886331482}
-  - component: {fileID: 886331481}
-  - component: {fileID: 886331480}
-  m_Layer: 0
-  m_Name: OutputLocationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &886331480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886331479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 164af5bb263973149946c52e90e2fba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outputPathText: {fileID: 0}
---- !u!114 &886331481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886331479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea5e037beba65c48bc05c98fb89a998, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &886331482
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886331479}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 606.08203, y: 749.00134, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889829435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1292,7 @@ GameObject:
   - component: {fileID: 889829436}
   - component: {fileID: 889829438}
   - component: {fileID: 889829437}
+  - component: {fileID: 889829439}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1387,6 +1357,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889829435}
   m_CullTransparentMesh: 1
+--- !u!114 &889829439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889829435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 2
 --- !u!1 &922376165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1382,7 @@ GameObject:
   - component: {fileID: 922376166}
   - component: {fileID: 922376168}
   - component: {fileID: 922376167}
+  - component: {fileID: 922376169}
   m_Layer: 5
   m_Name: File Image
   m_TagString: Untagged
@@ -1462,6 +1447,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922376165}
   m_CullTransparentMesh: 1
+--- !u!114 &922376169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922376165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &959611636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,6 +1718,7 @@ GameObject:
   - component: {fileID: 1074517421}
   - component: {fileID: 1074517423}
   - component: {fileID: 1074517422}
+  - component: {fileID: 1074517424}
   m_Layer: 5
   m_Name: File Image
   m_TagString: Untagged
@@ -1783,6 +1783,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074517420}
   m_CullTransparentMesh: 1
+--- !u!114 &1074517424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074517420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &1089654908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1808,7 @@ GameObject:
   - component: {fileID: 1089654909}
   - component: {fileID: 1089654911}
   - component: {fileID: 1089654910}
+  - component: {fileID: 1089654912}
   m_Layer: 5
   m_Name: File Image
   m_TagString: Untagged
@@ -1858,6 +1873,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089654908}
   m_CullTransparentMesh: 1
+--- !u!114 &1089654912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089654908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &1271895523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1971,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746652841}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FilePickerController, Assembly-CSharp
         m_MethodName: OpenFilePicker
         m_Mode: 1
@@ -2003,7 +2032,6 @@ GameObject:
   - component: {fileID: 1277985748}
   - component: {fileID: 1277985752}
   - component: {fileID: 1277985751}
-  - component: {fileID: 1277985750}
   - component: {fileID: 1277985749}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -2044,38 +2072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
---- !u!114 &1277985750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277985747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f7b1c8efb0780459820a7dc9052f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translations:
-  - language: 0
-    text: Select File
-  - language: 1
-    text: Seleccionar archivo
-  - language: 2
-    text: "Datei ausw\xE4hlen"
-  - language: 3
-    text: "S\xE9lectionner un fichier"
-  - language: 4
-    text: Selecionar arquivo
-  - language: 5
-    text: "\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E"
-  - language: 6
-    text: Seleziona file
-  - language: 7
-    text: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
-  - language: 8
-    text: "Dosya Se\xE7"
+  role: 1
 --- !u!114 &1277985751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2186,6 +2183,7 @@ GameObject:
   - component: {fileID: 1367828640}
   - component: {fileID: 1367828642}
   - component: {fileID: 1367828641}
+  - component: {fileID: 1367828643}
   m_Layer: 5
   m_Name: File Image
   m_TagString: Untagged
@@ -2250,6 +2248,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367828639}
   m_CullTransparentMesh: 1
+--- !u!114 &1367828643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367828639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187863e588dbbf468e2b24e2dbdcebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  role: 1
 --- !u!1 &1396224017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,7 +2313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
+  role: 1
 --- !u!114 &1396224021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,7 +2424,6 @@ GameObject:
   - component: {fileID: 1405376359}
   - component: {fileID: 1405376363}
   - component: {fileID: 1405376362}
-  - component: {fileID: 1405376361}
   - component: {fileID: 1405376360}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -2453,38 +2464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
---- !u!114 &1405376361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405376358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f7b1c8efb0780459820a7dc9052f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translations:
-  - language: 0
-    text: Select File
-  - language: 1
-    text: Seleccionar archivo
-  - language: 2
-    text: "Datei ausw\xE4hlen"
-  - language: 3
-    text: "S\xE9lectionner un fichier"
-  - language: 4
-    text: Selecionar arquivo
-  - language: 5
-    text: "\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E"
-  - language: 6
-    text: Seleziona file
-  - language: 7
-    text: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
-  - language: 8
-    text: "Dosya Se\xE7"
+  role: 1
 --- !u!114 &1405376362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,7 +2648,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746652841}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FilePickerController, Assembly-CSharp
         m_MethodName: OpenFilePicker
         m_Mode: 1
@@ -2777,7 +2757,6 @@ GameObject:
   - component: {fileID: 1664017683}
   - component: {fileID: 1664017687}
   - component: {fileID: 1664017686}
-  - component: {fileID: 1664017685}
   - component: {fileID: 1664017684}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -2818,38 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
---- !u!114 &1664017685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1664017682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f7b1c8efb0780459820a7dc9052f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  translations:
-  - language: 0
-    text: Select File
-  - language: 1
-    text: Seleccionar archivo
-  - language: 2
-    text: "Datei ausw\xE4hlen"
-  - language: 3
-    text: "S\xE9lectionner un fichier"
-  - language: 4
-    text: Selecionar arquivo
-  - language: 5
-    text: "\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E"
-  - language: 6
-    text: Seleziona file
-  - language: 7
-    text: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
-  - language: 8
-    text: "Dosya Se\xE7"
+  role: 1
 --- !u!114 &1664017686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,99 +2999,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1746652840
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1746652842}
-  - component: {fileID: 1746652841}
-  - component: {fileID: 1746652843}
-  - component: {fileID: 1746652844}
-  m_Layer: 0
-  m_Name: FilePickerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1746652841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746652840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ba86433bb0dc14fa76b1566885edd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fileNameText: {fileID: 0}
-  conversionSelector: {fileID: 1746652843}
---- !u!4 &1746652842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746652840}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 435.1914, y: 933.55426, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1746652843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746652840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65131f476da48604e8f5e724d7c1a5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversionPanel: {fileID: 0}
-  conversionDropdown: {fileID: 0}
-  OnConversionTypeSelected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1746652844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746652840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 002c19be4ba06c14f8870c9ad8294e5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filePicker: {fileID: 1746652841}
-  conversionSelector: {fileID: 1746652843}
-  convertButton: {fileID: 0}
-  statusText: {fileID: 0}
 --- !u!1 &1761717636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
+  role: 1
 --- !u!1 &1875607911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,7 +3335,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1746652841}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FilePickerController, Assembly-CSharp
         m_MethodName: OpenFilePicker
         m_Mode: 1
@@ -3712,7 +3567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
+  role: 1
 --- !u!1 &2116632234
 GameObject:
   m_ObjectHideFlags: 0
@@ -3896,7 +3751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  role: 2
+  role: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3905,6 +3760,4 @@ SceneRoots:
   - {fileID: 1738880611}
   - {fileID: 72059150}
   - {fileID: 1619241125}
-  - {fileID: 886331482}
   - {fileID: 820334463}
-  - {fileID: 1746652842}

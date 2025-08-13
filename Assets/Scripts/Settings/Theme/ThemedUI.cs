@@ -5,7 +5,7 @@ using TMPro;
 public class ThemedUI : MonoBehaviour
 {
     public enum UIType { Image, Text, TMP_Text }
-    public enum ThemeColorRole { Background, Button, Text, Accent , OtherDark , OtherLight , Panel}
+    public enum ThemeColorRole { Background, Button, Text, Accent}
 
     public UIType type;
     public ThemeColorRole role;
@@ -54,9 +54,6 @@ public class ThemedUI : MonoBehaviour
             case ThemeColorRole.Button: return theme.buttonColor;
             case ThemeColorRole.Text: return theme.textColor;
             case ThemeColorRole.Accent: return theme.accentColor;
-            case ThemeColorRole.OtherDark: return theme.otherDarkColor;
-            case ThemeColorRole.OtherLight: return theme.otherLightColor;
-            case ThemeColorRole.Panel: return theme.panelColor;
             default: return Color.white;
         }
     }
