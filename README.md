@@ -41,7 +41,7 @@ A multilingual, theme-customizable file converter for Android and iOS built with
 ## 🧾 License
 
 Licensed under the [Apache 2.0 License](LICENSE).  
-Commercial publishing on Google Play / App Store is **reserved by the original author**.
+Publishing on Google Play / App Store is **reserved by the original author**.
 
 ---
 
