@@ -1,24 +1,25 @@
 using UnityEngine;
 using TMPro;
 using System.IO;
+using System.Collections.Generic;
 
 public class FilePickerUI : MonoBehaviour
 {
     [Header("UI References")]
-    public TMP_Text fileNameText;        // TMP text to show filename.type
-    public GameObject panel1;            // First panel to show
-    public GameObject panel2;            // Second panel to show
+    public TMP_Text fileNameText;
+    public GameObject panel1;
+    public GameObject panel2;
+    public GameObject conversionPanel;   // panel where dropdown lives
+    public TMP_Dropdown conversionDropdown;
+
+    private string selectedExtension;
 
     public void PickFile()
     {
         if (NativeFilePicker.IsFilePickerBusy())
             return;
 
-        // Allowed extensions (without the dot)
-        string[] allowedExtensions = new string[]
-        {
-            "txt", "pdf", "doc", "docx", "xls", "xlsx"
-        };
+        string[] allowedExtensions = { "txt", "pdf", "docx", "xls", "xlsx" };
 
         NativeFilePicker.PickFile((path) =>
         {
@@ -28,18 +29,51 @@ public class FilePickerUI : MonoBehaviour
             }
             else
             {
-                Debug.Log("Picked file: " + path);
-
-                // Get filename with extension
                 string fileName = Path.GetFileName(path);
-
-                // Update TMP text
                 fileNameText.text = fileName;
 
-                // Show panels
+                selectedExtension = Path.GetExtension(path).TrimStart('.').ToLower();
+
                 panel1.SetActive(true);
                 panel2.SetActive(true);
+
             }
         }, allowedExtensions);
+    }
+
+    public void ShowConversionOptions()
+    {
+        if (string.IsNullOrEmpty(selectedExtension))
+        {
+            Debug.LogWarning("No file selected yet!");
+            return;
+        }
+
+        conversionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+
+        if (ConversionMap.SupportedConversions.ContainsKey(selectedExtension))
+        {
+            foreach (string output in ConversionMap.SupportedConversions[selectedExtension])
+            {
+                options.Add($".{selectedExtension} -> .{output}");
+            }
+        }
+        else
+        {
+            options.Add("No conversions available for ." + selectedExtension);
+        }
+
+        conversionDropdown.AddOptions(options);
+        conversionPanel.SetActive(true);
+    }
+
+    // Get selected conversion
+    public string GetSelectedConversion()
+    {
+        if (conversionDropdown.options.Count == 0)
+            return null;
+
+        return conversionDropdown.options[conversionDropdown.value].text;
     }
 }
